@@ -63,8 +63,8 @@ while (true) {
         try {
             let b = btn.bounds();
             let centerY = b.centerY();
-            // 比如小于屏幕高度 30% 的，认为是“顶部那张”，直接跳过
-            if (centerY < device.height * 0.30) {
+            // 比如小于屏幕高度 60% 的，认为是“顶部那张”，直接跳过
+            if (centerY < device.height * 0.60) {
                 console.log("第 " + (i + 1) + " 个【确认收款】太靠上（可能未结算卡片），跳过");
                 continue;
             }
@@ -91,5 +91,5 @@ while (true) {
     }
 
     // 一轮所有当前可见卡片处理完，稍微等一下再进行下一轮
-    sleep(1000);
+    sleep(800);
 }
